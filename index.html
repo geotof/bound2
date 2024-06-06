@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://kit.fontawesome.com/9aa47e8f9b.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      margin: 0;
+    }
+
+
+    body {
+      font: 200 16px/1 sans-serif;
+    }
+
+
+    #overlay {
+      position: fixed;
+      z-index: 99999;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: #141414;
+      transition: 1s 0.4s;
+    }
+
+    #progress {
+      height: 1px;
+      background: #f0ebeb;
+      position: absolute;
+      width: 0;
+      top: 50%;
+    }
+
+    #progstat {
+      font-size: 0.7em;
+      letter-spacing: 3px;
+      position: absolute;
+      top: 50%;
+      margin-top: -40px;
+      width: 100%;
+      text-align: center;
+      color: #f0ebeb;
+    }
+  </style>
+
+  <script>
+    const el = (sel, par) => (par || document).querySelector(sel);
+
+    function loadbar() {
+      const elOverlay = el("#overlay");
+      const elProgress = el("#progress");
+      const elProgstat = el("#progstat");
+      const images = document.images;
+      const tot = images.length;
+      let c = 0;
+
+      if (tot == 0) return doneLoading();
+
+      function imgLoaded() {
+        c += 1;
+        const perc = Math.floor(100 / tot * c) + "%";
+        elProgress.style.width = perc;
+        elProgstat.textContent = `Loading ${perc}`;
+        if (c === tot) return doneLoading();
+      }
+
+      function doneLoading() {
+        elOverlay.style.opacity = 0;
+        setTimeout(() => {
+          elOverlay.style.display = "none";
+        }, 1200);
+      }
+
+      [...images].forEach(img => {
+        const tmpImg = new Image();
+        tmpImg.onload = imgLoaded;
+        tmpImg.onerror = imgLoaded;
+        tmpImg.src = img.src;
+      });
+    }
+
+    addEventListener('DOMContentLoaded', loadbar, false);
+  </script>
+  <title>olgastate.nailtech</title>
+<script defer src="bundlee0f33e437eea45c76a24.js"></script></head>
+
+<body data-open="false" data-about="false">
+
+  <!-- Overlay -->
+  <div id="overlay">
+    <div id="progstat"></div>
+    <div id="progress"></div>
+  </div>
+
+  <!-- Logo -->
+  <div class="center">
+    <div id="logo">
+      <div class="logo-container">
+        <img id="image34" draggable="false">
+      </div>
+      <div class="logo-name-container">
+        olgastate.nailtech
+      </div>
+    </div>
+  </div>
+
+  <a href="https://www.instagram.com/olga.nailtech/" target="_blank">
+    <div class="center">
+      <div id="instagram">
+        <div class="instagram-container">
+          <i class="fa-solid fa-brands fa-instagram"></i>
+        </div>
+        <div class="logo-name-container">
+          instagram
+        </div>
+      </div>
+    </div>
+  </a>
+
+
+  <a href="https://www.tiktok.com/@olga.nailtech?lang=en" target="_blank">
+    <div class="center">
+      <div id="tiktok">
+        <div class="tiktok-container">
+          <i class="fa-solid fa-brands fa-tiktok"></i>
+        </div>
+        <div class="logo-name-container">
+          tiktok
+        </div>
+      </div>
+    </div>
+
+  </a>
+
+
+
+
+  <!-- Main Content -->
+  <main>
+    <div class="container" id="image-track" data-prev-percentage="0" data-percentage="0" data-mouse-down-at="0">
+
+      <!-- Image Column 1 -->
+      <div class="image-container margin-1" id="imageColumn1">
+        <img id="image1" class="image" draggable="false">
+        <img id="image2" class="image" draggable="false">
+        <img id="image3" class="image" draggable="false">
+        <img id="image4" class="image" draggable="false">
+        <img id="image5" class="image" draggable="false">
+        <img id="image6" class="image" draggable="false">
+        <img id="image7" class="image" draggable="false">
+        <img id="image8" class="image" draggable="false">
+      </div>
+
+      <!-- Image Column 2 -->
+      <div class="image-container margin-4" id="imageColumn2">
+        <img id="image9" class="image" draggable="false">
+        <img id="image10" class="image" draggable="false">
+        <img id="image11" class="image" draggable="false">
+        <img id="image12" class="image" draggable="false">
+        <img id="image13" class="image" draggable="false">
+        <img id="image14" class="image" draggable="false">
+        <img id="image15" class="image" draggable="false">
+        <img id="image16" class="image" draggable="false">
+      </div>
+
+      <!-- Image Column 3 -->
+      <div class="image-container margin-2" id="imageColumn3">
+        <img id="image17" class="image" draggable="false">
+        <img id="image18" class="image" draggable="false">
+        <img id="image19" class="image" draggable="false">
+        <img id="image20" class="image" draggable="false">
+        <img id="image21" class="image" draggable="false">
+        <img id="image22" class="image" draggable="false">
+        <img id="image23" class="image" draggable="false">
+        <img id="image24" class="image" draggable="false">
+      </div>
+
+      <!-- Image Column 4 -->
+      <div class="image-container margin-3" id="imageColumn4">
+        <img id="image25" class="image" draggable="false">
+        <img id="image26" class="image" draggable="false">
+        <img id="image27" class="image" draggable="false">
+        <img id="image28" class="image" draggable="false">
+        <img id="image29" class="image" draggable="false">
+        <img id="image30" class="image" draggable="false">
+        <img id="image31" class="image" draggable="false">
+        <img id="image32" class="image" draggable="false">
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <div id="nav-buttons">
+      <button id="nav-work" class="nav-button" draggable="false">
+        <p class="nav-button-label">Work</p>
+      </button>
+      <button id="nav-about" class="nav-button" draggable="false">
+        <p class="nav-button-label">About</p>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Navigation Toggle Button -->
+  <button id="nav-toggle" type="button">
+    <i class="open fa-solid fa-bars-staggered"></i>
+    <i class="close fa-solid fa-x"></i>
+  </button>
+
+
+
+  <!-- About -->
+
+
+  <div id="text-track" data-prev-percentage="0" data-percentage="0" data-mouse-down-at="0">
+    <div class="text-column">
+      <div class="about-text">
+
+        <!-- Hidden animation -->
+        <!-- About -->
+        <section class="hidden">Am fost</section>
+        <section class="hidden">dintotdeauna</section>
+        <section class="hidden">atrasă de orice a</section>
+        <section class="hidden">însemnat</section>
+        <section class="hidden">creativitate, design.</section>
+        <section class="hidden">Și chiar dacă de-a</section>
+        <section class="hidden">lungul vieții mele</section>
+        <section class="hidden">am descoperit tot</section>
+        <section class="hidden">felul de pasiuni,</section>
+        <section class="hidden">niciuna nu a reușit</section>
+        <section class="hidden">să întreacă arta.</section>
+        <section class="hidden">Încă din școală am</section>
+        <section class="hidden">început să particip</section>
+        <section class="hidden">la</section>
+        <section class="hidden">nenumărate</section>
+        <section class="hidden">concursuri de</section>
+        <section class="hidden">pictură și desen,</section>
+        <section class="hidden">cursuri de olărit,</section>
+        <section class="hidden">muzică si dans, iar</section>
+        <section class="hidden">atunci când am</section>
+        <section class="hidden">intrat la liceu,</section>
+        <section class="hidden">am decis să duc</section>
+        <section class="hidden">arta la un nivel mai</section>
+        <section class="hidden">practic, îmbinând</section>
+        <section class="hidden">utilul cu plăcutul -</section>
+        <section class="hidden">am început să</section>
+        <section class="hidden">pictez adidași și</section>
+        <section class="hidden">haine</section>
+        <section class="hidden">custom. Latura mea</section>
+        <section class="hidden">creativă a continuat</section>
+        <section class="hidden">să evolueze, și în</section>
+        <section class="hidden">calitate de</section>
+        <section class="hidden">domnișoară</section>
+        <section class="hidden">pasionată de</section>
+        <section class="hidden">domeniul beauty</section>
+        <seciton class="hidden">am</seciton>
+        <seciton class="hidden">hotărât să dau o</seciton>
+        <seciton class="hidden">șansă și unghiilor</seciton>
+        <seciton class="hidden">tehnice, cu modele</seciton>
+        <seciton class="hidden">complexe sau</seciton>
+        <seciton class="hidden">minimaliste. M-am</seciton>
+        <seciton class="hidden">îndrăgostit</seciton>
+        <seciton class="hidden">iremediabil. Activez</seciton>
+        <seciton class="hidden">în acest domeniu</seciton>
+        <seciton class="hidden">de mai puțin de un</seciton>
+        <seciton class="hidden">an, însă deja ma</seciton>
+        <seciton class="hidden">pot mândri cu</seciton>
+        <section class="hidden">rezultatele mele.</section>
+        <section class="hidden">De la lucrări și</section>
+        <section class="hidden">design-uri</section>
+        <section class="hidden">originale,</section>
+        <section class="hidden">la participarea la 3</section>
+        <section class="hidden">cursuri acreditate și</section>
+        <section class="hidden">un masterclass cu</section>
+        <section class="hidden">un trainer</section>
+        <section class="hidden">internațional, la</section>
+        <section class="hidden">obținerea unui</section>
+        <section class="hidden">certificat de</section>
+        <section class="hidden">calificare în</section>
+        <section class="hidden">domeniu, până la</section>
+        <section class="hidden">obținerea unei</section>
+        <section class="hidden">colaborări cu un</section>
+        <section class="hidden">mare brand de</section>
+        <section class="hidden">produse</section>
+        <section class="hidden">din domeniu. Toate</section>
+        <section class="hidden">aceste reușite au</section>
+        <section class="hidden">fost posibile prin</section>
+        <section class="hidden">muncă și pasiune.</section>
+        <section class="hidden">Călătoria mea abia</section>
+        <section class="hidden">începe, pentru că</section>
+        <section class="hidden">încă</section>
+        <section class="hidden">mă așteaptă multe</section>
+        <section class="hidden"> cursuri, concursuri</section>
+        <section class="hidden"> și provocări.</section>
+      </div>
+
+      <div class="info-text">
+
+        <!-- Hidden animation -->
+        <!-- Info -->
+        <section class="hidden">Am fost</section>
+        <section class="hidden">dintotdeauna</section>
+        <section class="hidden">atrasă de orice a</section>
+        <section class="hidden">însemnat</section>
+        <section class="hidden">.creativitate, design</section>
+        <section class="hidden">Și chiar dacă de-a</section>
+        <section class="hidden">lungul vieții mele</section>
+        <section class="hidden">am descoperit tot</section>
+        <section class="hidden">,felul de pasiuni</section>
+        <section class="hidden">niciuna nu a reușit</section>
+        <section class="hidden">.să întreacă arta</section>
+        <section class="hidden">Încă din școală am</section>
+        <section class="hidden">început să particip</section>
+        <section class="hidden">la</section>
+        <section class="hidden">nenumărate</section>
+        <section class="hidden">concursuri de</section>
+        <section class="hidden">,pictură și desen</section>
+        <section class="hidden">,cursuri de olărit</section>
+        <section class="hidden">muzică si dans, iar</section>
+        <section class="hidden">atunci când am</section>
+        <section class="hidden">,intrat la liceu</section>
+        <section class="hidden">am decis să duc</section>
+        <section class="hidden">arta la un nivel mai</section>
+        <section class="hidden">practic, îmbinând</section>
+        <section class="hidden">utilul cu plăcutul -</section>
+        <section class="hidden">am început să</section>
+        <section class="hidden">pictez adidași și</section>
+        <section class="hidden">haine</section>
+        <section class="hidden">custom. Latura mea</section>
+        <section class="hidden">creativă a continuat</section>
+        <section class="hidden">să evolueze, și în</section>
+        <section class="hidden">calitate de</section>
+        <section class="hidden">domnișoară</section>
+        <section class="hidden">pasionată de</section>
+        <section class="hidden">domeniul beauty</section>
+        <seciton class="hidden">am</seciton>
+        <seciton class="hidden">hotărât să dau o</seciton>
+        <seciton class="hidden">șansă și unghiilor</seciton>
+        <seciton class="hidden">tehnice, cu modele</seciton>
+        <seciton class="hidden">complexe sau</seciton>
+        <seciton class="hidden">minimaliste. M-am</seciton>
+        <seciton class="hidden">îndrăgostit</seciton>
+        <seciton class="hidden">iremediabil. Activez</seciton>
+        <seciton class="hidden">în acest domeniu</seciton>
+        <seciton class="hidden">de mai puțin de un</seciton>
+        <seciton class="hidden">an, însă deja ma</seciton>
+        <seciton class="hidden">pot mândri cu</seciton>
+        <section class="hidden">.rezultatele mele</section>
+        <section class="hidden">De la lucrări și</section>
+        <section class="hidden">design-uri</section>
+        <section class="hidden">,originale</section>
+        <section class="hidden">la participarea la 3</section>
+        <section class="hidden">cursuri acreditate și</section>
+        <section class="hidden">un masterclass cu</section>
+        <section class="hidden">un trainer</section>
+        <section class="hidden">internațional, la</section>
+        <section class="hidden">obținerea unui</section>
+        <section class="hidden">certificat de</section>
+        <section class="hidden">calificare în</section>
+        <section class="hidden">domeniu, până la</section>
+        <section class="hidden">obținerea unei</section>
+        <section class="hidden">colaborări cu un</section>
+        <section class="hidden">mare brand de</section>
+        <section class="hidden">produse</section>
+        <section class="hidden">din domeniu. Toate</section>
+        <section class="hidden">aceste reușite au</section>
+        <section class="hidden">fost posibile prin</section>
+        <section class="hidden">.muncă și pasiune</section>
+        <section class="hidden">Călătoria mea abia</section>
+        <section class="hidden">începe, pentru că</section>
+        <section class="hidden">încă</section>
+        <section class="hidden">mă așteaptă multe</section>
+        <section class="hidden"> cursuri, concursuri</section>
+        <section class="hidden"> .și provocări</section>
+      </div>
+
+
+    </div>
+
+  </div>
+</body>
+
+</html>
